@@ -49,4 +49,5 @@ const cardArray = [
   },
 ];
 
+cardArray.sort(() => 0.5 - Math.random()); //shortcut to shoveling array randomly
 console.log(cardArray);
