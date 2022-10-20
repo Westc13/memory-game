@@ -58,6 +58,8 @@ const cardsChosen = [];
 
 const cardsChosenIds = [];
 
+const cardsWon = [];
+
 console.log(gridDisplay);
 function createBoard() {
   for (let i = 0; i < cardArray.length; i++) {
@@ -79,6 +81,7 @@ function checkMatch() {
     cards[cardsChosenIds[1]].setAttribute("src", "images/white.png");
     cards[cardsChosenIds[0]].removeEventListener("click", flipCard);
     cards[cardsChosenIds[1]].removeEventListener("click", flipCard);
+    cardsWon.push(cardsChosen);
   }
 }
 function flipCard() {
