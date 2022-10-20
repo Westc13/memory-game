@@ -56,6 +56,8 @@ const gridDisplay = document.getElementById("grid");
 
 const cardsChosen = [];
 
+const cardsChosenIds = [];
+
 console.log(gridDisplay);
 function createBoard() {
   for (let i = 0; i < cardArray.length; i++) {
@@ -69,17 +71,20 @@ function createBoard() {
 }
 createBoard();
 function checkMatch() {
+  const cards = document.querySelectorAll("#grid img");
   console.log("check for a match!");
   if (cardsChosen[0] === cardsChosen[1]) {
     alert("You found a match!");
+    cards[chosenCardIds[0]].setAttribute("src", "images/white.png");
   }
 }
 function flipCard() {
   const cardId = this.getAttribute("data-id");
-  console.log(cardArray[cardId].name);
+  //   console.log(cardArray[cardId].name);
   cardsChosen.push(cardArray[cardId].name);
-  console.log("clicked", cardId);
-  console.log(cardsChosen);
+  cardsChosenIds.push(cardId);
+  //   console.log("clicked", cardId);
+  //   console.log(cardsChosen);
   this.setAttribute("src", cardArray[cardId].img);
   if (cardsChosen.length === 2) {
     setTimeout(checkMatch, 500);
