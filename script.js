@@ -83,6 +83,7 @@ function checkMatch() {
     cards[cardsChosenIds[1]].removeEventListener("click", flipCard);
     cardsWon.push(cardsChosen);
   }
+  cardsChosen = [];
 }
 function flipCard() {
   const cardId = this.getAttribute("data-id");
