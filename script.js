@@ -70,6 +70,9 @@ function createBoard() {
 createBoard();
 function checkMatch() {
   console.log("check for a match!");
+  if (cardsChosen[0] === cardsChosen[1]) {
+    alert("You found a match!");
+  }
 }
 function flipCard() {
   const cardId = this.getAttribute("data-id");
