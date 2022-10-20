@@ -75,7 +75,10 @@ function checkMatch() {
   console.log("check for a match!");
   if (cardsChosen[0] === cardsChosen[1]) {
     alert("You found a match!");
-    cards[chosenCardIds[0]].setAttribute("src", "images/white.png");
+    cards[cardsChosenIds[0]].setAttribute("src", "images/white.png");
+    cards[cardsChosenIds[1]].setAttribute("src", "images/white.png");
+    cards[cardsChosenIds[0]].removeEventListener("click", flipCard);
+    cards[cardsChosenIds[1]].removeEventListener("click", flipCard);
   }
 }
 function flipCard() {
