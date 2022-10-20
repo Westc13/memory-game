@@ -53,6 +53,9 @@ cardArray.sort(() => 0.5 - Math.random()); //shortcut to shoveling array randoml
 console.log(cardArray);
 
 const gridDisplay = document.getElementById("grid");
+
+const cardsChosen = [];
+
 console.log(gridDisplay);
 function createBoard() {
   for (let i = 0; i < cardArray.length; i++) {
@@ -68,6 +71,8 @@ createBoard();
 
 function flipCard() {
   const cardId = this.getAttribute("data-id");
-  console.log(cardArray[cardId]);
-  console.log(cardId);
+  console.log(cardArray[cardId].name);
+  cardsChosen.push(cardArray[cardId].name);
+  console.log("clicked", cardId);
+  console.log(cardsChosen);
 }
