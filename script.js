@@ -59,8 +59,15 @@ function createBoard() {
     const card = document.createElement("img");
     card.setAttribute("src", "images/blank.png");
     card.setAttribute("data-id", i);
+    card.addEventListener("click", flipCard);
     gridDisplay.append(card);
-    console.log(card, i);
+    // console.log(card, i);
   }
 }
 createBoard();
+
+function flipCard() {
+  const cardId = this.getAttribute("data-id");
+  console.log(cardArray[cardId]);
+  console.log(cardId);
+}
